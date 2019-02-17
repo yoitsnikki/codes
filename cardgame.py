@@ -1,0 +1,66 @@
+'''
+Niharika Agrawal
+Card Game
+Computers Programming
+Mrs. Dastur
+7D2
+May 18,2017
+'''
+print("Hey. So, this is a card game. If you lose, you give your soul to me. If you win, you play again until you lose. Good Luck!")
+print(" " )
+
+#Explains what to enter
+print("You enter each number with commas. Example List: 6,D,9,H,4,D,2,H,9,S.")
+print(" " )
+print("The D is Diamonds, C is Clubs, S is Spades, and H is hearts. Only play with the number range 2-10, as Jacks, Queens, and Kings won't work.")
+print(" " )
+
+#Given an input of cards, the first one played is the one played on the table, the rest are the cards in your hand.
+inputCards = input("Please type in the cards you want to play with; the first card you type will be the table card: ")
+print(" " )
+
+cardList = inputCards.split(",")
+
+tableCardRank = int(cardList[0])
+tableCardSuit = cardList[1]
+
+counter = 2
+
+saveCard = 0
+foundHighCard = False
+foundLowCard = False
+
+while counter <= len(cardList) - 2:
+    handCardRank = int(cardList[counter])
+    handCardSuit = cardList[counter + 1]
+    counter = counter + 2
+
+    if (handCardSuit == tableCardSuit and handCardRank > tableCardRank):
+
+        if (foundHighCard):
+            if saveCard > handCardRank:
+                saveCard = handCardRank
+        else:
+            saveCard = handCardRank
+            foundHighCard = True
+if (foundHighCard):
+    print("The next card move: " + str(saveCard) + "," + tableCardSuit)
+else:
+    counter = 2
+
+    while counter <= len(cardList) - 2:
+        handCardRank = int(cardList[counter])
+        handCardSuit = cardList[counter + 1]
+        counter = counter + 2
+
+        if (handCardSuit == tableCardSuit and handCardRank < tableCardRank):
+
+            if (foundLowCard):
+                if saveCard < handCardRank:
+                    saveCard = handCardRank
+            else:
+                saveCard = handCardRank
+                foundLowCard = True
+if (foundLowCard):
+    print("The next card move: " + str(saveCard) + "," + tableCardSuit)
+
