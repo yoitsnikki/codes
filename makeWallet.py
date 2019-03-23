@@ -23,10 +23,10 @@ publicKey = key.publickey()
 publicKey = publicKey.exportKey()
 
 #hash the key with sha256
-key256 = hashlib.sha256(publicKey).hexdigest()
+key256 = hashlib.new('sha256', publicKey).digest()
 
 #hash the key with ripemd160
-key160 = hashlib.new('ripemd160').hexdigest()
+key160 = hashlib.new('ripemd160', key256).hexdigest()
 
 #turn it into bytes
 base58 = bytes(key160, encoding= 'utf-8')
