@@ -1,9 +1,8 @@
 '''
 Nikki Agrawal
-Carl Shan
-Intro to Cryptocurrency
 
-Generate a public key and hash it to create an address in Bitcoin
+Assignment:
+Generate a public key and hash it into an ECC key
 Warning, the final is in bytes
 '''
 
