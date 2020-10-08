@@ -3,7 +3,7 @@ Nikki Agrawal
 
 Assignment:
 Generate a public key and hash it into an ECC key
-Warning, the final is in bytes
+Warning, the final is in bytes, i was just too lazy to convert it out of bytes
 '''
 
 #import the softwares necessary
